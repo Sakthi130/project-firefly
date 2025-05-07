@@ -11,8 +11,8 @@ Papa.parse(sheetUrl, {
     data.forEach(row => {
       // Create card element
       const card = document.createElement('div');
-      card.className = 'relative bg-white rounded-xl shadow-md p-4 flex flex-col h-40';
-      
+      card.className = 'relative bg-white rounded-xl shadow-md p-4 flex flex-col h-40 mb-6';
+
       // Title (Goals Name)
       const title = document.createElement("h2");
       title.className = "text-md font-semibold text-gray-700";
@@ -56,17 +56,16 @@ Papa.parse(sheetUrl, {
   }
 });
 
-// Function to schedule an alarm at a given hour (0-23)
 // Function to schedule an alarm at a given hour and minute
 function scheduleAlarm(hour, minute) {
   const now = new Date();
   let alarmTime = new Date(now.getFullYear(), now.getMonth(), now.getDate(), hour, minute, 0);
   if (alarmTime <= now) {
-    alarmTime.setDate(alarmTime.getDate() + 1);
+    alarmTime.setDate(alarmTime.getDate() + 1); // Move alarm to the next day if the time has passed
   }
   const msUntil = alarmTime - now;
   setTimeout(() => {
-    document.getElementById('alarmAudio').play();
+    document.getElementById('alarmAudio').play();  // Play alarm
     scheduleAlarm(hour, minute); // Reschedule for next day
   }, msUntil);
 }
@@ -77,8 +76,7 @@ function stopAlarm() {
   audio.currentTime = 0;
 }
 
-
-// Schedule alarms for 11am, 3pm, 6pm
-scheduleAlarm(10:45);
-scheduleAlarm(15);
-scheduleAlarm(18);
+// Schedule alarms for 11am, 3pm, and 6pm
+scheduleAlarm(11, 0);
+scheduleAlarm(15, 0);
+scheduleAlarm(18, 0);
