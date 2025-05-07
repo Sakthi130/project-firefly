@@ -64,13 +64,23 @@ function scheduleAlarm(hour, minute) {
     alarmTime.setDate(alarmTime.getDate() + 1); // Move alarm to the next day if the time has passed
   }
   const msUntil = alarmTime - now;
+
   setTimeout(() => {
-    document.getElementById('alarmAudio').play();  // Play alarm
-    scheduleAlarm(hour, minute); // Reschedule for next day
+    const audio = document.getElementById('alarmAudio');
+    audio.play();
+
+    // Stop after 5 seconds
+    setTimeout(() => {
+      audio.pause();
+      audio.currentTime = 0;
+    }, 5000);
+
+    // Schedule for next day
+    scheduleAlarm(hour, minute);
   }, msUntil);
 }
 
 // Schedule alarms for 11am, 3pm, and 6pm
-scheduleAlarm(11, 0);
+scheduleAlarm(11, 10);
 scheduleAlarm(15, 0);
 scheduleAlarm(18, 0);
