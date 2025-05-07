@@ -2,22 +2,28 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Goals Dashboard</title>
-  <!-- Tailwind CSS via CDN -->
+  <title>Goals Dashboard - Project Firefly</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- PapaParse library for CSV parsing -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
 </head>
-<body class="bg-[#f0fef6] flex flex-col items-center py-8">
-  <h1 class="text-3xl font-bold mb-6 text-[#09b367]">Goals Dashboard</h1>
+<body class="bg-green-50 flex flex-col items-center py-8">
 
-  <!-- Container for the 8 cards -->
+  <!-- Project Firefly Title + Logo -->
+  <div class="flex items-center mb-4 space-x-4">
+    <img src="22b84ad0-c527-458a-a675-e26412d39e5c.png" alt="Firefly Logo" class="w-12 h-12 rounded-full shadow-md">
+    <h2 class="text-3xl font-bold text-[#09b367]">Project Firefly</h2>
+  </div>
+
+  <!-- Goals Dashboard Title -->
+  <h1 class="text-2xl font-semibold text-[#09b367] mb-6">Goals Dashboard</h1>
+
+  <!-- 8 Cards Container -->
   <div id="cards-container" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 w-full px-4"></div>
 
-  <!-- Alarm audio (will be played by JS) -->
+  <!-- Alarm Audio -->
   <audio id="alarmAudio" src="alarm.mp3"></audio>
 
-  <!-- Custom script -->
+  <!-- Script -->
   <script src="script.js"></script>
 </body>
 </html>
