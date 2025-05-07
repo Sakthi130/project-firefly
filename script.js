@@ -80,7 +80,15 @@ function scheduleAlarm(hour, minute) {
   }, msUntil);
 }
 
+document.addEventListener('click', () => {
+  const audio = document.getElementById('alarmAudio');
+  audio.play().then(() => {
+    audio.pause(); // Immediately pause
+    audio.currentTime = 0;
+  }).catch(() => {});
+});
+
 // Schedule alarms for 11am, 3pm, and 6pm
-scheduleAlarm(11, 20);
+scheduleAlarm(12, 40);
 scheduleAlarm(15, 0);
 scheduleAlarm(18, 0);
