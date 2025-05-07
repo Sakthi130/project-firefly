@@ -89,6 +89,6 @@ document.addEventListener('click', () => {
 });
 
 // Schedule alarms for 11am, 3pm, and 6pm
-scheduleAlarm(12, 40);
+scheduleAlarm(13, 0);
 scheduleAlarm(15, 0);
 scheduleAlarm(18, 0);
