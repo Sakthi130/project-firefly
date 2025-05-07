@@ -71,6 +71,12 @@ function scheduleAlarm(hour, minute) {
   }, msUntil);
 }
 
+function stopAlarm() {
+  const audio = document.getElementById('alarmAudio');
+  audio.pause();
+  audio.currentTime = 0;
+}
+
 
 // Schedule alarms for 11am, 3pm, 6pm
 scheduleAlarm(10:30);
