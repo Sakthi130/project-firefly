@@ -81,6 +81,6 @@ function scheduleAlarm(hour, minute) {
 }
 
 // Schedule alarms for 11am, 3pm, and 6pm
-scheduleAlarm(11, 10);
+scheduleAlarm(11, 20);
 scheduleAlarm(15, 0);
 scheduleAlarm(18, 0);
