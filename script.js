@@ -57,23 +57,22 @@ Papa.parse(sheetUrl, {
 });
 
 // Function to schedule an alarm at a given hour (0-23)
-function scheduleAlarm(hour) {
+// Function to schedule an alarm at a given hour and minute
+function scheduleAlarm(hour, minute) {
   const now = new Date();
-  let alarmTime = new Date(now.getFullYear(), now.getMonth(), now.getDate(), hour, 0, 0);
-  // If time has already passed today, set for tomorrow
+  let alarmTime = new Date(now.getFullYear(), now.getMonth(), now.getDate(), hour, minute, 0);
   if (alarmTime <= now) {
     alarmTime.setDate(alarmTime.getDate() + 1);
   }
   const msUntil = alarmTime - now;
   setTimeout(() => {
-    // Play alarm sound
     document.getElementById('alarmAudio').play();
-    // Reschedule for next day
-    scheduleAlarm(hour);
+    scheduleAlarm(hour, minute); // Reschedule for next day
   }, msUntil);
 }
 
+
 // Schedule alarms for 11am, 3pm, 6pm
-scheduleAlarm(11);
+scheduleAlarm(10:30);
 scheduleAlarm(15);
 scheduleAlarm(18);
