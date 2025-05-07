@@ -39,9 +39,9 @@ Papa.parse(sheetUrl, {
       const curVal = parseFloat(row['Current Status']);
       const prevVal = parseFloat(row['Yesterday Status']);
       if (!isNaN(curVal) && !isNaN(prevVal)) {
-        if (curVal > prevVal) arrow = '↑';
-        else if (curVal < prevVal) arrow = '↓';
-        else arrow = '→';
+        if (curVal > prevVal) arrow = '🚀';
+        else if (curVal < prevVal) arrow = '🔻';
+        else arrow = '-';
       }
       // Arrow element (right middle)
       if (arrow) {
