@@ -73,7 +73,7 @@ function scheduleAlarm(hour, minute) {
     setTimeout(() => {
       audio.pause();
       audio.currentTime = 0;
-    }, 5000);
+    }, 15000);
 
     // Schedule for next day
     scheduleAlarm(hour, minute);
@@ -89,6 +89,6 @@ document.addEventListener('click', () => {
 });
 
 // Schedule alarms for 11am, 3pm, and 6pm
-scheduleAlarm(13, 0);
+scheduleAlarm(11, 0);
 scheduleAlarm(15, 0);
 scheduleAlarm(18, 0);
