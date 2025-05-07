@@ -14,8 +14,8 @@ Papa.parse(sheetUrl, {
       card.className = 'relative bg-white rounded-xl shadow-md p-4 flex flex-col h-40';
       
       // Title (Goals Name)
-      const title = document.createElement('div');
-      title.className = 'text-sm font-medium text-gray-600 text-center';
+      const title = document.createElement("h2");
+      title.className = "text-md font-semibold text-gray-700";
       title.textContent = row['Goals Name'] || '';
       card.appendChild(title);
 
