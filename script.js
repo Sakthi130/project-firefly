@@ -79,6 +79,6 @@ function stopAlarm() {
 
 
 // Schedule alarms for 11am, 3pm, 6pm
-scheduleAlarm(10:30);
+scheduleAlarm(10:45);
 scheduleAlarm(15);
 scheduleAlarm(18);
