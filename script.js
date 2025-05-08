@@ -73,7 +73,7 @@ function scheduleAlarm(hour, minute) {
     setTimeout(() => {
       audio.pause();
       audio.currentTime = 0;
-    }, 5000);
+    }, 10000);
 
     // Schedule for next day
     scheduleAlarm(hour, minute);
