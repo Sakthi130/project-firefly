@@ -40,7 +40,7 @@ Papa.parse(sheetUrl, {
         if (prog === 'good') arrow = '🚀';
         else if (prog === 'bad') arrow = '🤕';
         else arrow = '-';
-      }
+      
       // Arrow element (right middle)
       if (arrow) {
         const arrowEl = document.createElement('div');
