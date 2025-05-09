@@ -35,12 +35,10 @@ Papa.parse(sheetUrl, {
       card.appendChild(yesterday);
 
       // Determine progression arrow
-      let arrow = '';
-      const curVal = parseFloat(row['Current Status']);
-      const prevVal = parseFloat(row['Yesterday Status']);
-      if (!isNaN(curVal) && !isNaN(prevVal)) {
-        if (curVal > prevVal) arrow = '🚀';
-        else if (curVal < prevVal) arrow = '🔻';
+      let arrow = '-';
+      const prog = (row['Progression'] || '').toLowerCase();
+        if (prog === 'good') arrow = '🚀';
+        else if (prog === 'bad') arrow = '🤕';
         else arrow = '-';
       }
       // Arrow element (right middle)
