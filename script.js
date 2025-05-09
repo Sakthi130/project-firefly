@@ -92,3 +92,7 @@ document.addEventListener('click', () => {
 scheduleAlarm(11, 0);
 scheduleAlarm(15, 0);
 scheduleAlarm(18, 0);
+
+setInterval(() => {
+  window.location.reload();
+}, 5 * 60 * 1000);
