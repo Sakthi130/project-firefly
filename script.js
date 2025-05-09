@@ -31,16 +31,18 @@ Papa.parse(sheetUrl, {
       // Yesterday Status (bottom center)
       const yesterday = document.createElement('div');
       yesterday.className = 'mt-auto text-xs text-gray-500 text-center';
-      yesterday.textContent = `Yesterday: ${row['Yesterday Status'] || ''}`;
+      yesterday.textContent = Yesterday: ${row['Yesterday Status'] || ''};
       card.appendChild(yesterday);
 
       // Determine progression arrow
-      let arrow = '-';
-      const prog = (row['Progression'] || '').toLowerCase();
-        if (prog === 'good') arrow = '🚀';
-        else if (prog === 'bad') arrow = '🤕';
+      let arrow = '';
+      const curVal = parseFloat(row['Current Status']);
+      const prevVal = parseFloat(row['Yesterday Status']);
+      if (!isNaN(curVal) && !isNaN(prevVal)) {
+        if (curVal > prevVal) arrow = '🚀';
+        else if (curVal < prevVal) arrow = '🔻';
         else arrow = '-';
-      
+      }
       // Arrow element (right middle)
       if (arrow) {
         const arrowEl = document.createElement('div');
