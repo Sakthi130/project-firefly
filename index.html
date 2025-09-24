@@ -5,6 +5,11 @@
   <title>Goals Dashboard - Project Firefly</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+  <style>
+    #cards-container > div:nth-child(n+5) {
+      display: none; /* hides cards after the 4th */
+    }
+  </style>
 </head>
 <body class="bg-green-50 flex flex-col items-center py-8">
 
@@ -26,4 +31,5 @@
   <script src="script.js"></script>
 </body>
 </html>
+
 
